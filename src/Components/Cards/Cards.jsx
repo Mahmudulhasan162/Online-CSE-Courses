@@ -8,6 +8,8 @@ import Cart from '../../Cart/Cart';
 const Cards = () => {
     const[courses, setCourses]= useState([])
     const [selectedCourse, setSelectedCourse] = useState([])
+    const [remainingCredit, setRemainingCredit] = useState(0)
+    const [totalCredit, setTotalCredit] = useState(0)
 
     useEffect(()=>{
         fetch("../../../public/Courses.json")
@@ -17,13 +19,31 @@ const Cards = () => {
     },[])
  
     const handleCourses = (course) => {
+       const existedCourse = selectedCourse.find(item => item.id==course.id);
+
+       let credit= course.credit;
+
+       if(existedCourse){
+        return alert('This Course has already taken.')
+       }else{
+        selectedCourse.forEach(item => {
+            credit += item.credit;
+        })
+        const remainingCredit= 20- credit;
+        if(remainingCredit<0){
+            return alert("You can't access more than 20 credits")
+        }else{
+        setTotalCredit(credit)
+        setRemainingCredit(remainingCredit);
         setSelectedCourse([...selectedCourse,course])
+        }
+       }
     }
   
 
     return (
-        <div className=' container flex'>
-            <div className='w-4/5 grid grid-cols-3 '>
+        <div className='container flex'>
+            <div className='w-3/4 grid grid-cols-3 '>
                 {
                     courses.map((course)=>
                         <div key={course.id} className='card p-6 rounded-xl m-3 space-y-4 bg-white'>
@@ -51,9 +71,10 @@ const Cards = () => {
                 }
 
             </div>
-            <div className='text-center w-1/5 bg-white p-3 rounded-xl'>
-                <h2 className='text-xl font-bold'>Course Name</h2>
-                <Cart selectedCourse={selectedCourse}></Cart>
+            <div className='w-1/4'>
+                
+                <Cart selectedCourse={selectedCourse} remainingCredit={remainingCredit}
+                totalCredit={totalCredit}></Cart>
             </div>
         </div>
     );
