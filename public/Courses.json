@@ -5,15 +5,15 @@
       "course_name": "Python Programming Fundamentals",
       "credit": 3,
       "price": 49.99,
-      "details": "Learn the basics of Python programming, including variables, loops, and functions. Suitable for beginners."
+      "details": "Learn the basics of Python programming, including variables, loops, and functions. Suitable for beginners. "
     },
     {
       "id": "2",
       "cover_img": "https://i.ibb.co/zf9zRMZ/Rectangle-2-1.png",
-      "course_name": "Java for Beginners",
+      "course_name": "Java Programming for Beginners",
       "credit": 4,
       "price": 59.99,
-      "details": "A comprehensive introduction to Java, covering object-oriented programming and Java syntax."
+      "details": "A comprehensive introduction to Java, covering object-oriented programming and Java syntax. Java OOP concepts. "
     },
     {
       "id": "3",
@@ -29,7 +29,7 @@
       "course_name": "Web Development with HTML, CSS, and JavaScript",
       "credit": 4,
       "price": 69.99,
-      "details": "Learn web development essentials, including HTML, CSS, and JavaScript for building interactive websites."
+      "details": "Learn web development, including HTML, CSS, and JavaScript for building interactive websites."
     },
     {
       "id": "5",
@@ -37,7 +37,7 @@
       "course_name": "Data Structures and Algorithms in Python",
       "credit": 4,
       "price": 89.99,
-      "details": "Explore fundamental data structures and algorithms using Python."
+      "details": "Explore fundamental data structures and algorithms using Python programming language."
     },
     {
       "id": "6",
@@ -45,7 +45,7 @@
       "course_name": "JavaScript for Front-End Development",
       "credit": 3,
       "price": 49.99,
-      "details": "Focus on JavaScript for building dynamic and responsive web applications."
+      "details": "Focus on JavaScript programming language for building dynamic and responsive web applications."
     },
     {
       "id": "7",
