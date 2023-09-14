@@ -1,0 +1,75 @@
+[
+    {
+      "id": "1",
+      "cover_img": "https://i.ibb.co/Hd2mNZs/Rectangle-2.png",
+      "course_name": "Python Programming Fundamentals",
+      "credit": 3,
+      "price": 49.99,
+      "details": "Learn the basics of Python programming, including variables, loops, and functions. Suitable for beginners."
+    },
+    {
+      "id": "2",
+      "cover_img": "https://i.ibb.co/zf9zRMZ/Rectangle-2-1.png",
+      "course_name": "Java for Beginners",
+      "credit": 4,
+      "price": 59.99,
+      "details": "A comprehensive introduction to Java, covering object-oriented programming and Java syntax."
+    },
+    {
+      "id": "3",
+      "cover_img": "https://i.ibb.co/R4c4XdJ/Rectangle-2-4.png",
+      "course_name": "C++ Programming Masterclass",
+      "credit": 5,
+      "price": 79.99,
+      "details": "Master C++ programming, including advanced topics like templates and memory management."
+    },
+    {
+      "id": "4",
+      "cover_img": "https://i.ibb.co/HhmYz6Z/Rectangle-2-5.png",
+      "course_name": "Web Development with HTML, CSS, and JavaScript",
+      "credit": 4,
+      "price": 69.99,
+      "details": "Learn web development essentials, including HTML, CSS, and JavaScript for building interactive websites."
+    },
+    {
+      "id": "5",
+      "cover_img": "https://i.ibb.co/VWQpZhk/Rectangle-2-3.png",
+      "course_name": "Data Structures and Algorithms in Python",
+      "credit": 4,
+      "price": 89.99,
+      "details": "Explore fundamental data structures and algorithms using Python."
+    },
+    {
+      "id": "6",
+      "cover_img": "https://i.ibb.co/r0HXjS6/Rectangle-2-6.png",
+      "course_name": "JavaScript for Front-End Development",
+      "credit": 3,
+      "price": 49.99,
+      "details": "Focus on JavaScript for building dynamic and responsive web applications."
+    },
+    {
+      "id": "7",
+      "cover_img": "https://i.ibb.co/km5wBBm/Rectangle-3-1.png",
+      "course_name": "Advanced Java Programming",
+      "credit": 5,
+      "price": 99.99,
+      "details": "Deepen your Java skills with advanced concepts and hands-on projects."
+    },
+    {
+      "id": "8",
+      "cover_img": "https://i.ibb.co/HY83qJ4/Rectangle-3.png",
+      "course_name": "Python for Data Science and Machine Learning",
+      "credit": 4,
+      "price": 79.99,
+      "details": "Learn Python for data analysis, machine learning, and data visualization."
+    },
+    {
+      "id": "9",
+      "cover_img": "https://i.ibb.co/JKVmf1k/Rectangle-2-2.png",
+      "course_name": "Algorithmic Problem Solving with C",
+      "credit": 4,
+      "price": 69.99,
+      "details": "Improve your problem-solving skills with algorithms and C programming."
+    }
+  ]
+  
