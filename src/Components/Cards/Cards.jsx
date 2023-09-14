@@ -3,9 +3,11 @@
 
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Cart from '../../Cart/Cart';
 
 const Cards = () => {
     const[courses, setCourses]= useState([])
+    const [selectedCourse, setSelectedCourse] = useState([])
 
     useEffect(()=>{
         fetch("../../../public/Courses.json")
@@ -13,12 +15,18 @@ const Cards = () => {
         .then(data => setCourses(data))
 
     },[])
+ 
+    const handleCourses = (course) => {
+        setSelectedCourse([...selectedCourse,course])
+    }
+  
+
     return (
-        <div className=' container'>
+        <div className=' container flex'>
             <div className='w-4/5 grid grid-cols-3 '>
                 {
                     courses.map((course)=>
-                        <div className='card p-6 rounded-xl m-3 space-y-4 bg-white'>
+                        <div key={course.id} className='card p-6 rounded-xl m-3 space-y-4 bg-white'>
                 <img src={course.cover_img} alt="" />
                 <h3 className=' text-xl font-semibold'>{course.course_name}</h3>
                 <p className='text-gray-500'>{course.details}</p>
@@ -37,14 +45,15 @@ const Cards = () => {
                     <p>Credit : {course.credit}hr</p>
                     </div>
                 </div>
-                <button className='text-white bg-[#2F80ED] py-2 rounded-lg text-lg font-semibold'>Select</button>
+                <button onClick={()=>handleCourses(course)} className='text-white bg-[#2F80ED] py-2 rounded-lg text-lg font-semibold'>Select</button>
                 </div>
                     )
                 }
 
             </div>
-            <div>
-
+            <div className='text-center w-1/5 bg-white p-3 rounded-xl'>
+                <h2 className='text-xl font-bold'>Course Name</h2>
+                <Cart selectedCourse={selectedCourse}></Cart>
             </div>
         </div>
     );
