@@ -2,11 +2,12 @@
 /* eslint-disable react/prop-types */
 
 
-const Cart = ({selectedCourse,remainingCredit,totalCredit}) => {
+const Cart = ({selectedCourse,remainingCredit,totalCredit, totalPrice}) => {
     
     return (
-        <div className='text-center  bg-white p-3 rounded-xl text-gray-500'>
+        <div className='text-left  bg-white p-3 rounded-xl text-gray-500 mt-3'>
             <p className="text-[#2F80ED] text-lg font-semibold">Remaining Credit Hours: {remainingCredit} hr </p>
+            <hr className="my-5" />
             <h2 className='text-xl font-bold'>Course Name</h2>
             {
                 
@@ -18,8 +19,10 @@ const Cart = ({selectedCourse,remainingCredit,totalCredit}) => {
                     </>
                     )
             }
-            <hr className="mt-3" />
-            <p>Total Credit Hours: {totalCredit}</p>
+            <hr className="my-5" />
+            <p className=" text-slate-600 font-medium">Total Credit Hours: {totalCredit}</p>
+            <hr className="my-5" />
+            <p className=" text-slate-600 font-medium">Total Price : {totalPrice} USD</p>
         </div>
     );
 };

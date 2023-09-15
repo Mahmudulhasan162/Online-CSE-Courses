@@ -29,12 +29,12 @@
       "course_name": "Web Development with HTML, CSS, and JavaScript",
       "credit": 4,
       "price": 69.99,
-      "details": "Learn web development, including HTML, CSS, and JavaScript for building interactive websites."
+      "details": "Learn web dev., including HTML, CSS, and JavaScript for building interactive websites."
     },
     {
       "id": "5",
       "cover_img": "https://i.ibb.co/VWQpZhk/Rectangle-2-3.png",
-      "course_name": "Data Structures and Algorithms in Python",
+      "course_name": "Data Structures and Algorithms in Python programming language",
       "credit": 4,
       "price": 89.99,
       "details": "Explore fundamental data structures and algorithms using Python programming language."

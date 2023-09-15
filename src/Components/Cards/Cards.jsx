@@ -10,6 +10,7 @@ const Cards = () => {
     const [selectedCourse, setSelectedCourse] = useState([])
     const [remainingCredit, setRemainingCredit] = useState(0)
     const [totalCredit, setTotalCredit] = useState(0)
+    const [totalPrice, setTotalPrice] = useState(0)
 
     useEffect(()=>{
         fetch("../../../public/Courses.json")
@@ -22,18 +23,21 @@ const Cards = () => {
        const existedCourse = selectedCourse.find(item => item.id==course.id);
 
        let credit= course.credit;
+       let price= course.price;
 
        if(existedCourse){
         return alert('This Course has already taken.')
        }else{
         selectedCourse.forEach(item => {
             credit += item.credit;
+            price += item.price;
         })
         const remainingCredit= 20- credit;
         if(remainingCredit<0){
             return alert("You can't access more than 20 credits")
         }else{
         setTotalCredit(credit)
+        setTotalPrice(price)
         setRemainingCredit(remainingCredit);
         setSelectedCourse([...selectedCourse,course])
         }
@@ -42,7 +46,10 @@ const Cards = () => {
   
 
     return (
-        <div className='container flex'>
+        
+        <div >
+            <h1 className=' text-4xl font-bold text-center mb-8'>Course Registration</h1>
+            <div className='container flex'>
             <div className='w-3/4 grid grid-cols-3 '>
                 {
                     courses.map((course)=>
@@ -50,7 +57,7 @@ const Cards = () => {
                 <img src={course.cover_img} alt="" />
                 <h3 className=' text-xl font-semibold'>{course.course_name}</h3>
                 <p className='text-gray-500'>{course.details}</p>
-                <div className='flex justify-evenly'>
+                <div className='flex justify-evenly '>
                 <div className='flex gap-2'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M12 1V23" stroke="#1C1B1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -58,7 +65,7 @@ const Cards = () => {
                 </svg>
                     <p>Price : {course.price}</p>
                 </div>
-                    <div className='flex gap-2'>
+                    <div className='flex gap-1'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M12 6.042C10.3516 4.56336 8.2144 3.74694 6 3.75C4.948 3.75 3.938 3.93 3 4.262V18.512C3.96362 18.172 4.97816 17.9989 6 18C8.305 18 10.408 18.867 12 20.292M12 6.042C13.6483 4.56328 15.7856 3.74685 18 3.75C19.052 3.75 20.062 3.93 21 4.262V18.512C20.0364 18.172 19.0218 17.9989 18 18C15.7856 17.9969 13.6484 18.8134 12 20.292M12 6.042V20.292" stroke="#1C1B1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -74,7 +81,8 @@ const Cards = () => {
             <div className='w-1/4'>
                 
                 <Cart selectedCourse={selectedCourse} remainingCredit={remainingCredit}
-                totalCredit={totalCredit}></Cart>
+                totalCredit={totalCredit} totalPrice={totalPrice}></Cart>
+            </div>
             </div>
         </div>
     );
