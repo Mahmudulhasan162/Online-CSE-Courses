@@ -10,8 +10,8 @@ import Swal from 'sweetalert2'
 const Cards = () => {
     const[courses, setCourses]= useState([])
     const [selectedCourse, setSelectedCourse] = useState([])
-    const [remainingCredit, setRemainingCredit] = useState(0)
     const [totalCredit, setTotalCredit] = useState(0)
+    const [remainingCredit, setRemainingCredit] = useState(0)
     const [totalPrice, setTotalPrice] = useState(0)
 
     useEffect(()=>{
