@@ -4,6 +4,8 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Cart from '../../Cart/Cart';
+import Swal from 'sweetalert2'
+
 
 const Cards = () => {
     const[courses, setCourses]= useState([])
@@ -13,7 +15,7 @@ const Cards = () => {
     const [totalPrice, setTotalPrice] = useState(0)
 
     useEffect(()=>{
-        fetch("../../../public/Courses.json")
+        fetch("./Courses.json")
         .then(res => res.json())
         .then(data => setCourses(data))
 
@@ -26,7 +28,12 @@ const Cards = () => {
        let price= course.price;
 
        if(existedCourse){
-        return alert('This Course has already taken.')
+        Swal.fire({
+            title: 'Sorry!',
+            text:"You've already taken this course...",
+            icon: 'warning',
+            confirmButtonText: 'Back'
+          });
        }else{
         selectedCourse.forEach(item => {
             credit += item.credit;
@@ -34,7 +41,12 @@ const Cards = () => {
         })
         const remainingCredit= 20- credit;
         if(remainingCredit<0){
-            return alert("You can't access more than 20 credits")
+            Swal.fire({
+                title: 'Wait!!',
+                text:"You can't access more than 20 credits",
+                icon: 'error',
+                confirmButtonText: 'OK'
+              });
         }else{
         setTotalCredit(credit)
         setTotalPrice(price)
@@ -50,10 +62,10 @@ const Cards = () => {
         <div >
             <h1 className=' text-4xl font-bold text-center mb-8'>Course Registration</h1>
             <div className='container flex'>
-            <div className='w-3/4 grid grid-cols-3 '>
+            <div className='w-4/5 grid grid-cols-3 '>
                 {
                     courses.map((course)=>
-                        <div key={course.id} className='card p-6 rounded-xl m-3 space-y-4 bg-white'>
+                        <div key={course.id} className='card text-left p-6 rounded-xl m-3 space-y-4 bg-white'>
                 <img src={course.cover_img} alt="" />
                 <h3 className=' text-xl font-semibold'>{course.course_name}</h3>
                 <p className='text-gray-500'>{course.details}</p>
@@ -78,7 +90,7 @@ const Cards = () => {
                 }
 
             </div>
-            <div className='w-1/4'>
+            <div className='w-1/5'>
                 
                 <Cart selectedCourse={selectedCourse} remainingCredit={remainingCredit}
                 totalCredit={totalCredit} totalPrice={totalPrice}></Cart>
