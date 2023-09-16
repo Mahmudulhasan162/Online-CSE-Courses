@@ -1,9 +1,9 @@
 1. Three project features of this project :-
 
-##Features
--Select button shows the individual project name in the cart.
--Total credit hours calculation using React.
--Remaining credit hours calculation using React.
+## Features
+- Select button shows the individual project name in the cart.
+- Total credit hours calculation using React.
+- Remaining credit hours calculation using React.
 
 
 2. How I have managed the state in my assignment project :-
